@@ -88,6 +88,19 @@ checklist              e.g. 56%               until 95%+ x3
 - `run autoresearch on [skill]`
 - `auto-improve [skill]`
 
+**Commands (`/ar:` namespace):**
+
+| Command | Description |
+|---------|-------------|
+| `/ar:setup [skill]` | Initialize a new autoresearch experiment for the target skill |
+| `/ar:run` | Execute one single iteration (modify → score → keep/revert) |
+| `/ar:loop` | Start the autonomous loop (runs until 95%+ ×3 or manual stop) |
+| `/ar:status` | Show progress dashboard: current score, round count, recent changes |
+| `/ar:resume` | Resume an interrupted experiment from the last saved state |
+
+**Design principle: one change per experiment. Measure everything. Accumulate improvements.**
+The agent must never modify the eval checklist during a run — only the skill prompt.
+
 ## Writing Good Evals
 
 Evals must be **binary yes/no** — not scales, not ratings. Binary evals give a reliable signal every time.
@@ -270,6 +283,27 @@ Update `autoresearch-state.json` if dashboard is running.
    **Why reverted:** [explanation]
    ```
 5. Report to user: starting score → final score, rounds run, changes kept, file paths
+
+### On `/ar:resume`
+
+Save experiment state to `autoresearch-state.json` after every round so the experiment can be resumed:
+
+```json
+{
+  "skill": "path/to/SKILL.md",
+  "test_input": "...",
+  "evals": ["eval 1", "eval 2", "..."],
+  "round": 12,
+  "best_score": "6/7",
+  "current_score": "5/7",
+  "consecutive_95": 0,
+  "history": [
+    { "round": 1, "score": "4/7", "change": "...", "result": "kept" }
+  ]
+}
+```
+
+On resume: read state file, restore skill to `current_skill_prompt`, report where the experiment left off, then continue the loop.
 
 ### Edge cases
 
