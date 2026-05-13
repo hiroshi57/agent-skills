@@ -1,19 +1,19 @@
 {
-  "name": "addy-agent-skills",
+  "name": "hiroshi57-agent-skills",
   "owner": {
-    "name": "Addy Osmani"
+    "name": "hiroshi57"
   },
   "metadata": {
-    "description": "Production-grade engineering skills for AI coding agents — covering the full software development lifecycle from spec to ship."
+    "description": "Production-grade engineering skills + content-os + autoresearch for AI coding agents."
   },
   "plugins": [
     {
       "name": "agent-skills",
       "source": {
         "source": "github",
-        "repo": "addyosmani/agent-skills"
+        "repo": "hiroshi57/agent-skills"
       },
-      "description": "Production-grade engineering skills covering every phase of software development: spec, plan, build, verify, review, and ship."
+      "description": "Production-grade engineering skills covering spec, plan, build, verify, review, ship — plus content-os and autoresearch."
     }
   ]
 }
