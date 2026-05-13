@@ -68,16 +68,106 @@ When initialized, creates:
       feedback-loop.md
 ```
 
-## The Four Routes
+## The Four Routes (Idea Gate)
 
-Before drafting, classify the content object:
+The idea gate makes one decision before anything else: **what kind of content is this?**
+One decision upfront saves three rewrites later.
 
-| Route | Source | Use when |
-|-------|--------|----------|
-| **ORIGINAL** | Your notes, journal, second brain | You have something to say that no external source triggered |
-| **REPURPOSE** | Your own past content | A prior post, article, or thread has more to give |
-| **REWRITE** | External signal (tweet, article, transcript) | You want to translate someone else's frame through your POV |
-| **RESEARCH+IDEATE** | Any | You want angles, not a draft — output goes to stores/ideas/ |
+```
+                         Idea gate
+               one decision: what kind of content is this?
+                              │
+          ┌───────────────────┼───────────────────┐──────────────────┐
+          ▼                   ▼                   ▼                  ▼
+    1. Original         2. Repurpose         3. Rewrite       4. Research+ideate
+   ─────────────       ─────────────        ──────────        ────────────────────
+   SOURCE:             SOURCE:              SOURCE:           SOURCE:
+   From you            Owned content        External signal   Topic exploration
+   second brain        existing articles    a tweet worth     study patterns
+   notes · journals    posts that hit       responding        generate angles
+   voice memos         series that have     an article worth  no fixed source yet
+   ideas you've        legs                 a teardown
+   been sitting on                          a transcript
+                                            with a frame
+
+   BRIEF:              BRIEF:               BRIEF:            OUTPUT:
+   Leans on            Spine is yours       Through your POV  not a post
+   foundation          format changes       what to keep      a sharpened idea
+   positioning         thread from          what to credit    or list of angles
+   proof bank          article              voice rules       feeds back to
+   pillars             self-QRT on a hit    apply             stores/ideas/
+   no external source                       avoid-slop check
+   high taste
+   investment
+          │                   │                   │
+          └───────────────────┴───────────────────┘
+                              ▼
+                       Drafting starts
+            three routes flow in · each carrying its
+                own brief, references, and gates
+
+WHY THE GATE EXISTS:
+  Without the gate → drafts blur sources · voice drifts · credit gets messy
+  With the gate    → each route has its own checks · drafts arrive cleaner
+```
+
+| Route | Source | Brief focus | Output |
+|-------|--------|-------------|--------|
+| **ORIGINAL** | Second brain, notes, journals, voice memos | Positioning, proof bank, pillars. No external source. High taste investment. | Draft |
+| **REPURPOSE** | Your own articles, posts that hit, series with legs | Spine is yours. Format changes. Thread from article, self-QRT on a hit. | Draft |
+| **REWRITE** | External signal (tweet, article, transcript) | Through your POV. What to keep, what to credit, voice rules, avoid-slop check. | Draft |
+| **RESEARCH+IDEATE** | Any / no fixed source | Topic exploration, study patterns, generate angles. | Angles → `stores/ideas/` (not a post) |
+
+## V1 Setup — 6 Steps · 1-2 Hours
+
+> You won't be done. You'll be started. The only state worth being in.
+> 1-2 hours upfront saves hours every week after — next draft starts with context, not from scratch.
+
+```
+1 scaffold  →  Scaffold the structure
+               six top-level dirs: strategy · voice · stores · runs · modules · workflows
+               inside runs/ add active/ and archive/
+               leave the rest mostly empty for now · you'll fill them as you go
+
+2 strategy  →  Fill strategy · 3 files · 3-5 lines each
+               positioning.md · audience.md · pillars.md
+               pillars = 3-4 topics you've earned the right to talk about
+               audience = one specific person · not a segment
+
+3 voice     →  Write the voice anchors
+               voice-profile.md → 5 rules you follow · 5 patterns you avoid · 2-3 reference posts
+               avoid-slop.md → start with 8 known patterns · add every time a tell slips by
+               stores/proof/ → 10 concrete proofs · numbers · names · projects shipped
+               every agent reads voice + avoid-slop before drafting a single line
+
+4 ideas     →  Drop 10 ideas into stores/inbox.md
+               half should come from things you've already said this month
+               in DMs · on calls · in conversations
+               not made up on the spot · steal from your own actual thinking
+
+5 run folder → Open one run folder for one idea
+               runs/active/2026-05-{your-slug}/
+               content-object.md → id · status · format · pillar
+               brief.md → writer context packet
+               hand the brief to your writing model · this is the moment the system actually runs
+
+6 close loop → Read the draft · close the loop
+               model returns draft-package.md inside the same run folder
+               check against the verifier + master avoid-slop document
+               approve · queue · or send back with one specific note
+               when it ships → write feedback.md → archive the folder
+```
+
+**What you end up with after 1-2 hours:**
+```
+my-content-system/
+├── strategy/  — positioning · audience · pillars
+├── voice/     — voice-profile · avoid-slop
+├── stores/    — inbox · proof · feedback
+├── runs/active/2026-05-your-slug/  — content-object · brief · draft-package · feedback
+├── modules/   — writer skill · references · templates
+└── workflows/ — idea-to-published · verifier · scheduler · feedback loop
+```
 
 ## Content Object Lifecycle
 
